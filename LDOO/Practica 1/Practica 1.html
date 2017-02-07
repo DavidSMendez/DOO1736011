@@ -1,0 +1,60 @@
+<doctype htmml>
+<html>
+
+	<head>
+	
+	</head>
+		<body>
+		
+		
+		<label>Ingrese su nombre:<label/>
+		<input  id="nombre" type="text" placeholder="Ingrese el nombre"/>
+		<br/>
+		<br/>
+		<label>Ingrese su apellido paterno:<label/>
+		<input id="apellidoP" type="text" placeholder="Ingrese apellido paterno"/>
+		<br/>
+		<br/>
+		<label>Ingrese su apellido materno:<label/>
+		<input id="apellidoM" type="text" placeholder="Ingres el apellido materno"/>
+		<br/>
+		<br/>
+		<label>Ingrese su fecha de nacimiento:</label>
+		<input id="dia" type="text" placeholder="Ingrese dia"/>
+		<input id="mes" type="text" placeholder="Ingrese mes"/>
+		<input id="anio" type="text" placeholder="Ingrese el anio"/>
+		<br>
+		<br/>
+		Género:
+		<select name="" id="genero" >	
+			<option value="H">Masculino</option>
+			<option value="M">Femenino</option>
+			</select>
+		<br/>
+		<br/>
+		
+		<input type="button" value="Imprimir" onclick="imprimir()"/>
+		<label id="lbl-test"> </label>
+			
+			<script>
+			function formulario(){
+				var nombre =document.getElementById("nombre").value;
+				var apellidoP =document.getElementById("apellidoP").value;
+				var apellidoM =document.getElementById("apellidoM").value;
+				var anio =document.getElementById("anio").value;
+				var mes =document.getElementById("mes").value;
+				var dia =document.getElementById("dia").value;
+				var gen =document.getElementById("genero").value;
+				var rfc =apellidoP.substring(0,2) + apellidoM.substring(0,1) + nombre.substring(0,1) + anio.substring(2,4) + mes.substring(0,2) + dia.substring(0,2) + gen.substring(0,1);
+				return rfc;
+			}
+			function imprimir() {
+				var rfc =formulario();
+				var label=document.getElementById("lbl-test").innerHTML=rfc;
+			}
+					
+			</script>
+			
+		</body>	
+		
+</html>		
